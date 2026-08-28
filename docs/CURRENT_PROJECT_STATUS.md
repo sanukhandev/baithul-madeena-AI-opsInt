@@ -2,6 +2,8 @@
 
 Status basis: source review of the frontend and backend `main` branches, compared against the target context in this parent repository.
 
+Latest implementation milestone: frontend `dev` now has live Finance rent-payment ledger and `/finance/new` receive-payment posting through `receiveRentPayment`; Agreement, Tenant, and Property → Building → Unit verticals remain closed. Backend is unchanged.
+
 Legend:
 
 - **Implemented** — executable source exists for the core capability.
