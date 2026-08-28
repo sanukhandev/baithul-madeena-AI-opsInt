@@ -25,15 +25,15 @@ It is not ready to be treated as a completed ERP. It is also not appropriate to 
 | Parent coordination/context | Implemented | Parent repo, submodules, agent/context docs and source review are established. |
 | Frontend design system / shell | Implemented | React/TanStack/Tailwind operational UI exists across many routes. |
 | Frontend ERP pages | Prototype | Broad screens exist for core modules, but data is largely local/static. |
-| Frontend authentication | Prototype | Hard-coded user + sessionStorage; not backend JWT auth. |
-| Frontend GraphQL integration | Not established | No GraphQL client/documents or application query hooks found. |
+| Frontend authentication | Implemented / Foundation | Backend JWT GraphQL login, session retrieval, refresh, logout and expiry handling are wired. |
+| Frontend GraphQL integration | Foundation | Small authenticated GraphQL request client exists; operational data queries remain. |
 | Frontend realtime integration | Not established | No end-to-end Reverb integration established in review. |
 | Frontend ZaakiyVerse | Prototype | Local React response simulation; no backend AI call. |
 | Laravel backend foundation | Implemented | Laravel 12 + modular domain structure is present. |
 | GraphQL backend | Implemented / Partial | Lighthouse and many schema/query/mutation files exist; full product contract coverage still incomplete. |
 | JWT backend auth | Implemented | Auth service/resolver/mutation and Auth tests exist. |
 | RBAC/policies | Implemented / Review required | Gates, policies and authorization framework exist. Must be checked comprehensively against target role/action/data visibility rules. |
-| Organization/branch isolation | Partial / Review required | Shared repository context scoping exists, but it is conditional on context being applied; fail-closed enforcement needs architecture review. |
+| Organization/branch isolation | Hardened / Review required | Backend repositories and GraphQL directives fail closed when required context is missing; broader domain review remains. |
 | Property/building/unit | Implemented / Partial | Domain layers exist. End-to-end functional completeness and FE integration remain to be verified. |
 | Owner management | Implemented / Partial | Backend GraphQL/domain components exist; portal/integration breadth not established. |
 | Tenant management | Implemented / Partial | Strong domain structure exists; dashboard/business aggregate methods contain hard-zero stubs. |

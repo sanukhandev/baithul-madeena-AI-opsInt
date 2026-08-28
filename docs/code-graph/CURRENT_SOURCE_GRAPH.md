@@ -52,15 +52,15 @@ TanStack Router
 ```text
 /login
   -> src/lib/auth.ts
-  -> hard-coded VALID_USERS
-  -> sessionStorage
+  -> GraphQL login mutation
+  -> JWT + organization/active branch session
 ```
 
-This is prototype-only authentication and is not connected to backend JWT GraphQL auth.
+Authentication is now connected to the backend JWT GraphQL contract; business routes remain prototype-level.
 
 ### Data edge
 
-No GraphQL documents/client usage or React Query `useQuery` usage was found during repository search. Application `fetch()` usage was not found except in server infrastructure. This means the route surfaces are currently not wired to the Laravel GraphQL backend.
+The frontend now has a small plain-`fetch` GraphQL client in `src/lib/auth.ts`; operational route data is not yet wired to the Laravel GraphQL backend.
 
 The ZaakiyVerse screen explicitly synthesizes an assistant response in local React state after a prompt rather than calling an AI/backend service.
 
