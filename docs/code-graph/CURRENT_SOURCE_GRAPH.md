@@ -60,7 +60,7 @@ Authentication is now connected to the backend JWT GraphQL contract; business ro
 
 ### Data edge
 
-The frontend has a small plain-`fetch` GraphQL client plus `src/lib/erp.ts` TanStack Query hooks. Properties, tenants and agreements list routes now consume authenticated backend data; the remaining operational routes are not yet wired.
+The frontend has a small plain-`fetch` GraphQL client plus `src/lib/erp.ts` TanStack Query hooks. Properties, tenants and agreements list/detail payment routes consume authenticated backend data; remaining operational routes are not yet wired.
 
 The ZaakiyVerse screen explicitly synthesizes an assistant response in local React state after a prompt rather than calling an AI/backend service.
 
