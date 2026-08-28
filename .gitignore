@@ -1,0 +1,11 @@
+# Added by code-review-graph
+.code-review-graph/
+
+# Local development tools
+.claude/
+.gemini/
+.kiro/
+.qoder/
+.vscode/
+.mcp.json
+.opencode.json
