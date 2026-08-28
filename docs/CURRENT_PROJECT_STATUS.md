@@ -55,7 +55,7 @@ It is not ready to be treated as a completed ERP. It is also not appropriate to 
 | Ops Intelligence | Not implemented | No `system_incidents` subsystem observed. |
 | GitHub autonomous incident escalation | Not implemented | Target-only at this revision. |
 | Legacy data migration | Not established | No complete migration/cutover implementation established by this review. |
-| Production FE/BE integration | Not implemented | This is currently the largest cross-repo gap. |
+| Production FE/BE integration | First vertical / Partial | Property, tenant and agreement list reads now use authenticated GraphQL; building/unit/schedule/payment screens and mutations remain. |
 
 ## Approximate project maturity
 
