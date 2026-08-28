@@ -2,7 +2,7 @@
 
 Status basis: source review of the frontend and backend `main` branches, compared against the target context in this parent repository.
 
-Latest implementation milestone: frontend `dev` now has live Finance rent-payment ledger, `/finance/new` receive-payment posting through `receiveRentPayment`, dashboard KPIs through `paymentDashboard`, and live Owner list/detail/property/OwnerAgreement reads plus Owner create/edit routes. Owner status, delete/restore, documents, and financial aggregates remain intentionally unexposed. Agreement, Tenant, and Property → Building → Unit verticals remain closed. Backend is unchanged.
+Latest implementation milestone: frontend `dev` now has live Finance rent-payment ledger, `/finance/new` receive-payment posting through `receiveRentPayment`, dashboard KPIs through `paymentDashboard`, live Owner list/detail/property/OwnerAgreement reads plus Owner create/edit routes, and a live Maintenance request board/dashboard backed by `maintenanceRequests` and `maintenanceDashboard`. Maintenance writes, advanced assignment/work-order flows, and Reports remain outside the selected bounded slice. Owner status, delete/restore, documents, and financial aggregates remain intentionally unexposed. Agreement, Tenant, and Property → Building → Unit verticals remain closed. Backend is unchanged.
 
 Legend:
 
