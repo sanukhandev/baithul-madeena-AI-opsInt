@@ -9,3 +9,4 @@
 .vscode/
 .mcp.json
 .opencode.json
+node_modules/

@@ -1,0 +1,29 @@
+{
+  "name": "baithul-madeena-ai-opsint",
+  "version": "1.0.0",
+  "description": "This repository is the coordination and project-intelligence workspace for the Baithul Madeena ERP modernization program.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:frontend": "cd frontend && npm run dev",
+    "start:backend": "cd backend && php artisan serve",
+    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanukhandev/baithul-madeena-AI-opsInt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sanukhandev/baithul-madeena-AI-opsInt/issues"
+  },
+  "homepage": "https://github.com/sanukhandev/baithul-madeena-AI-opsInt#readme",
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}
