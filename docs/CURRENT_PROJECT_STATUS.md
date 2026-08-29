@@ -1,5 +1,11 @@
 # Current Project Status
 
+## Phase 1 technical closure (2026-08-29)
+
+Phase 1 feature development and final backend aggregate validation are CLOSED. The authoritative backend command is `php -d memory_limit=256M vendor/bin/phpunit`; it completes 293 tests and 1,034 assertions with zero failures/errors (134 MB peak). Direct PHPUnit is used because the Artisan child runner retained a 128 MB process limit. Legacy finance, maintenance, media, vendor, work-order, OwnerDocument, PostingRule, PreventiveMaintenance, and nested GraphQL context/order issues were repaired without weakening fail-closed organization/branch isolation. Randomized security order validation passed with seed `20260829`.
+
+Dashboard, reports, grouped-per-currency Aging and Historical Trends, and secure CSV exports remain CLOSED. Manual UAT and staging validation are pending acceptance activities; Phase 2 modules (CRM, Automation, advanced maintenance lifecycle, snapshots, XLSX/PDF, async exports, and optional Reverb features) remain deferred.
+
 Authentication regression fix: `User::effectivePermissions()` now provides the organization/branch-scoped role permission query, while the GraphQL `User.permissions` field resolves it explicitly. The login payload's nested and top-level permissions use the same effective source.
 
 Reports productionization milestone: `/reports` now uses authoritative branch-scoped collection, portfolio, maintenance, agreement, tenant, owner, receivables aging, and historical collections contracts. Secure CSV exports are available through the allowlisted `reportExport` contract and reuse existing report services. Reports milestone is CLOSED; XLSX/PDF remain deferred.
