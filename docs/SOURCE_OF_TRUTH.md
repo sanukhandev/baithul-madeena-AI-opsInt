@@ -92,3 +92,6 @@ When asked about a feature or code path:
 3. inspect Code Graph artifacts when present;
 4. state whether the answer describes current behavior, target architecture, or both;
 5. identify uncertainty rather than inventing implementation details.
+## Operational Ownership Rule
+
+Every operational master and transaction belongs to exactly one Organization and one authoritative Branch, directly or through an immutable parent where duplication would be inappropriate. Organization is the administrative/security container; Branch is the operational data boundary. Cross-branch access is explicit permission to multiple branch-owned records, not organization-global ownership. Owners are explicitly branch-owned via `owners.branch_id`.
