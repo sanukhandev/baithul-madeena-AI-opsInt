@@ -1,6 +1,6 @@
 # Current Project Status
 
-Reports productionization milestone: `/reports` now uses authoritative branch-scoped `paymentDashboard` collection and `propertyDashboard` portfolio/occupancy snapshots, without assuming currency, and links to Finance/Properties. Fixture P&L, aging, trends, exports, and AI narrative content were removed. Reports remains PARTIAL pending dedicated report contracts for maintenance, agreement, tenant, owner, historical trends, and exports.
+Reports productionization milestone: `/reports` now uses authoritative branch-scoped `paymentDashboard` collection, `propertyDashboard` portfolio/occupancy, and dedicated `maintenanceReportSummary` status/SLA snapshots, without assuming currency, and links to Finance/Properties. Fixture P&L, aging, trends, exports, and AI narrative content were removed. Reports remains PARTIAL pending dedicated report contracts for agreement, tenant, owner, historical trends, and exports.
 
 Maintenance Phase 1 core lifecycle milestone: the backend-proven `Verified -> Closed` transition is now exposed through the dedicated frontend Close action. Runtime coverage proves skip-path, permission, organization, and branch isolation; frontend coverage proves dedicated mutation use and targeted detail/list/dashboard invalidation. The core chain `Assigned -> Accepted -> InProgress -> Completed -> Verified -> Closed` is CLOSED. Phase 2 branches remain deferred.
 
