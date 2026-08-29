@@ -16,9 +16,9 @@ The preceding legacy/mapping entries describe the pre-allocation state and are s
 
 Tenant Summary milestone: CLOSED. The typed `tenantReportSummary` query aggregates persisted Tenant statuses (`Prospect`, `Active`, `Inactive`, `Blacklisted`) server-side from direct `tenants.branch_id` scope under `tenants.view`; `/reports` renders the branch-partitioned live summary with loading, error, and zero states. No Agreement-derived status or branch logic is used. Overall Reports remains PARTIAL pending Owner Summary, aging, historical trends, and exports.
 
-Owner branch ownership milestone: IN PROGRESS. Owners now receive direct branch authority from the authenticated branch, generic updates cannot transfer it, and Owner→Property/Agreement relationships are validated for organization and branch consistency. Development allocation and NOT NULL enforcement remain to be completed before closure.
+Owner branch ownership milestone: CLOSED. `owners.branch_id` is a non-null FK with branch/status indexes. Development Owners were allocated deterministically with seed `BM_OWNER_BRANCH_SPLIT_V1`: 108 synthetic records split evenly across Branches 1/2, while 5 records with existing single-branch Property/Unit evidence retained Branches 3/4. All 113 Owners have valid same-organization branches; Owner→Property and OwnerAgreement organization/branch consistency is enforced and no multi-branch conflicts remain. Generic updates cannot transfer ownership.
 
-Owner Summary milestone: PARTIAL. The report is being converted from organization-wide to active-branch scope using direct `owners.branch_id` and persisted `Owner.status`.
+Owner Summary milestone: CLOSED. The typed report now aggregates persisted Owner status from direct organization + active-branch scope and `/reports` uses a branch-partitioned cache key and active-branch label.
 
 Receivables Aging milestone: PAUSED pending branch-ownership consistency across operational domains. The approved grouped-per-currency semantics remain reserved for the next slice.
 
