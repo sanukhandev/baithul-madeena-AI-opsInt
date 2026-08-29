@@ -4,7 +4,9 @@ Target: `https://erp.dw-digitalplatforms.in/` on `147.93.101.184:65002`, path `/
 
 The intended request flow is Apache → `erp/public/index.php` → Laravel/Lighthouse (`POST /graphql`). The domain document root must point to `/home/u249550001/domains/dw-digitalplatforms.in/public_html/erp/public`; pointing it at the project root would expose application source and is not supported.
 
-`deploy/production.sh` is the repeatable SSH-key/rsync deployment command. It never carries a password, excludes `.env`, `.git`, `node_modules`, and persistent runtime data, validates Lighthouse, and runs only non-destructive migrations/optimization. If password authentication is required, provide it out-of-band as `<SSH_PASSWORD_SECRET>`; never add it to this repository.
+The CI packaging workflow at `.github/workflows/package-production.yml` builds the frontend on GitHub Actions (Node 22) and publishes two separate ZIP artifacts: `frontend-dist.zip` and `backend-app-no-vendor.zip`. The backend archive excludes `vendor`, `.env*`, and persistent runtime files. Download and upload these artifacts independently through the hosting file manager; copy the existing compatible `vendor/` directory separately. No workflow step reads, creates, modifies, or uploads either environment file.
+
+`deploy/production.sh` remains an SSH-key/rsync option for hosts that support it. It never carries a password. If password authentication is required, provide it out-of-band as `<SSH_PASSWORD_SECRET>`; never add it to this repository.
 
 ## Current release blocker
 
@@ -14,6 +16,14 @@ The frontend is a TanStack Start Cloudflare SSR build. `npm run build` produces 
 2. approve a separate static-SPA build target that emits an `index.html` and route fallback compatible with Laravel.
 
 No remote deployment was attempted beyond a non-authenticated capability probe; the server rejected the SSH connection from this environment. No migrations or remote files were changed.
+
+## Artifact deployment procedure
+
+1. Run the workflow manually or push a version tag and download its artifacts.
+2. Upload `backend-app-no-vendor.zip` into `/home/u249550001/domains/dw-digitalplatforms.in/public_html/erp` and extract without deleting `.env`, `storage/app`, or `storage/logs`.
+3. Copy the manually prepared `vendor/` directory into `erp/vendor` (or run `composer install --no-dev --prefer-dist --optimize-autoloader` on the server).
+4. Upload `frontend-dist.zip` to the configured static frontend location only after the static-SPA/SSR decision below is resolved. Do not overwrite Laravel's `public/index.php`.
+5. Run Laravel optimization and `php artisan migrate --force` from the hosting terminal. Never run `migrate:fresh`, `db:wipe`, or schema drops.
 
 ## Server setup after the blocker is resolved
 
