@@ -14,6 +14,8 @@ Business-approved synthetic allocation milestone: CLOSED for controlled developm
 
 The preceding legacy/mapping entries describe the pre-allocation state and are superseded for this controlled development database: the 25 rows are now resolved and `branch_id` is non-null.
 
+Tenant Summary milestone: CLOSED. The typed `tenantReportSummary` query aggregates persisted Tenant statuses (`Prospect`, `Active`, `Inactive`, `Blacklisted`) server-side from direct `tenants.branch_id` scope under `tenants.view`; `/reports` renders the branch-partitioned live summary with loading, error, and zero states. No Agreement-derived status or branch logic is used. Overall Reports remains PARTIAL pending Owner Summary, aging, historical trends, and exports.
+
 Maintenance Phase 1 core lifecycle milestone: the backend-proven `Verified -> Closed` transition is now exposed through the dedicated frontend Close action. Runtime coverage proves skip-path, permission, organization, and branch isolation; frontend coverage proves dedicated mutation use and targeted detail/list/dashboard invalidation. The core chain `Assigned -> Accepted -> InProgress -> Completed -> Verified -> Closed` is CLOSED. Phase 2 branches remain deferred.
 
 Maintenance Verify milestone: the backend-proven `Completed -> Verified` transition is now exposed through the dedicated frontend Verify action. Runtime tests cover the complete lifecycle chain, skip-path rejection, permission enforcement, and organization/branch isolation; frontend tests cover dedicated mutation use and targeted detail/list/dashboard invalidation.
