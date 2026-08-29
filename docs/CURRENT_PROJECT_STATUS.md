@@ -1,5 +1,9 @@
 # Current Project Status
 
+## Frontend route security (P0 remediation)
+
+Protected routes now await the authenticated session bootstrap before rendering. Invalid, expired, missing, or rejected sessions redirect to `/login`; route permissions are checked centrally against the session's organization/active-branch effective permissions, including granular create/update routes. Logout clears credentials and emits an auth-change event that clears protected React Query state. Route guards are defense in depth; backend GraphQL authorization remains authoritative. Focused route-security coverage passes and the frontend suite is 105/105.
+
 ## Phase 1 technical closure (2026-08-29)
 
 Phase 1 feature development and final backend aggregate validation are CLOSED. The authoritative backend command is `php -d memory_limit=256M vendor/bin/phpunit`; it completes 293 tests and 1,034 assertions with zero failures/errors (134 MB peak). Direct PHPUnit is used because the Artisan child runner retained a 128 MB process limit. Legacy finance, maintenance, media, vendor, work-order, OwnerDocument, PostingRule, PreventiveMaintenance, and nested GraphQL context/order issues were repaired without weakening fail-closed organization/branch isolation. Randomized security order validation passed with seed `20260829`.
