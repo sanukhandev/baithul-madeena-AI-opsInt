@@ -1,5 +1,7 @@
 # Current Project Status
 
+Authentication regression fix: `User::effectivePermissions()` now provides the organization/branch-scoped role permission query, while the GraphQL `User.permissions` field resolves it explicitly. The login payload's nested and top-level permissions use the same effective source.
+
 Reports productionization milestone: `/reports` now uses authoritative branch-scoped collection, portfolio, maintenance, agreement, tenant, owner, receivables aging, and historical collections contracts. Secure CSV exports are available through the allowlisted `reportExport` contract and reuse existing report services. Reports milestone is CLOSED; XLSX/PDF remain deferred.
 
 Agreement Status Summary milestone: dedicated `agreementReportSummary` now provides complete current-state status/type counts from scoped Agreements, including Cancelled/Renewed and explicit other-type reconciliation. Backend runtime tests prove organization/branch isolation, permission enforcement, zero-state behavior, and non-paginated reconciliation; `/reports` displays the live summary. Overall Reports remains PARTIAL pending Tenant, Owner, aging, historical, and export contracts.

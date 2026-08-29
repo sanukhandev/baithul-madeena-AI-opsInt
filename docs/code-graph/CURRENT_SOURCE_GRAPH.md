@@ -1,5 +1,7 @@
 # Current Cross-Repository Source Graph Review
 
+Latest auth edge: `User::effectivePermissions()` is the explicit organization/branch-scoped role-permission source; GraphQL `User.permissions` resolves through `App\\GraphQL\\Resolvers\\UserResolver` rather than treating the collection query as an Eloquent relationship.
+
 Reviewed against the parent project context and the `main` branches currently pinned by the parent repository.
 
 ## Repository graph
