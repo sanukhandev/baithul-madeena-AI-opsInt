@@ -1,5 +1,7 @@
 # Current Project Status
 
+Reports discovery milestone: no dedicated Reports/Analytics aggregate API exists. `/reports` now uses the authoritative branch-scoped `paymentDashboard` collection snapshot (without assuming currency) and links to Finance; fixture P&L, occupancy, aging, trends, exports, and AI narrative content were removed. Reports remains PARTIAL pending dedicated complete report contracts.
+
 Maintenance Phase 1 core lifecycle milestone: the backend-proven `Verified -> Closed` transition is now exposed through the dedicated frontend Close action. Runtime coverage proves skip-path, permission, organization, and branch isolation; frontend coverage proves dedicated mutation use and targeted detail/list/dashboard invalidation. The core chain `Assigned -> Accepted -> InProgress -> Completed -> Verified -> Closed` is CLOSED. Phase 2 branches remain deferred.
 
 Maintenance Verify milestone: the backend-proven `Completed -> Verified` transition is now exposed through the dedicated frontend Verify action. Runtime tests cover the complete lifecycle chain, skip-path rejection, permission enforcement, and organization/branch isolation; frontend tests cover dedicated mutation use and targeted detail/list/dashboard invalidation.
