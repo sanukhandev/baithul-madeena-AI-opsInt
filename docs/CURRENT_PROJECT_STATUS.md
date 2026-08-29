@@ -1,6 +1,6 @@
 # Current Project Status
 
-Reports productionization milestone: `/reports` now uses authoritative branch-scoped `paymentDashboard` collection, `propertyDashboard` portfolio/occupancy, and dedicated `maintenanceReportSummary` status/SLA snapshots, without assuming currency, and links to Finance/Properties. Fixture P&L, aging, trends, exports, and AI narrative content were removed. Reports remains PARTIAL pending dedicated report contracts for agreement, tenant, owner, historical trends, and exports.
+Reports productionization milestone: `/reports` now uses authoritative branch-scoped collection, portfolio, maintenance, agreement, tenant, owner, and receivables aging contracts. Historical Trends now provides bounded monthly collections from recognized payment allocations, grouped per currency with no FX or combined total. Reports remains PARTIAL pending exports.
 
 Agreement Status Summary milestone: dedicated `agreementReportSummary` now provides complete current-state status/type counts from scoped Agreements, including Cancelled/Renewed and explicit other-type reconciliation. Backend runtime tests prove organization/branch isolation, permission enforcement, zero-state behavior, and non-paginated reconciliation; `/reports` displays the live summary. Overall Reports remains PARTIAL pending Tenant, Owner, aging, historical, and export contracts.
 
@@ -20,7 +20,9 @@ Owner branch ownership milestone: CLOSED. `owners.branch_id` is a non-null FK wi
 
 Owner Summary milestone: CLOSED. The typed report now aggregates persisted Owner status from direct organization + active-branch scope and `/reports` uses a branch-partitioned cache key and active-branch label.
 
-Receivables Aging milestone: PAUSED pending branch-ownership consistency across operational domains. The approved grouped-per-currency semantics remain reserved for the next slice.
+Receivables Aging milestone: CLOSED. The report uses positive persisted schedule balances, due-date buckets, direct organization/branch scope, and grouped-per-currency output with no FX or cross-currency total.
+
+Historical Trends milestone: CLOSED for Monthly Collections. `historicalTrendsReport` accepts an explicit date range (maximum 36 calendar months), groups recognized `Completed`/`PartiallyPaid` payment allocations by payment currency and `received_date`, returns continuous monthly periods, and excludes reversed/cancelled/unrecognized or deleted payments. Unsupported historical state metrics remain deferred; see `HISTORICAL_REPORTING_SOURCE_MATRIX.md`.
 
 Maintenance Phase 1 core lifecycle milestone: the backend-proven `Verified -> Closed` transition is now exposed through the dedicated frontend Close action. Runtime coverage proves skip-path, permission, organization, and branch isolation; frontend coverage proves dedicated mutation use and targeted detail/list/dashboard invalidation. The core chain `Assigned -> Accepted -> InProgress -> Completed -> Verified -> Closed` is CLOSED. Phase 2 branches remain deferred.
 
