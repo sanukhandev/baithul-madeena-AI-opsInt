@@ -28,6 +28,8 @@ Historical Trends milestone: CLOSED for Monthly Collections. `historicalTrendsRe
 
 Report exports milestone: CLOSED for CSV. `reportExport` accepts only allowlisted report identifiers and CSV format, reuses authoritative report services, enforces report permissions and authenticated organization/branch context, and protects CSV formula injection. XLSX and PDF are deferred.
 
+Dashboard live-data milestone: the main dashboard now consumes existing branch-scoped Property, Tenant, Owner, Agreement, Maintenance, Receivables Aging, and Historical Trends contracts. Runtime mock KPI values, fabricated charts, fake approvals/activity, and unsupported historical deltas were removed. Financial values remain grouped per currency; unsupported historical state metrics are not reconstructed.
+
 Maintenance Phase 1 core lifecycle milestone: the backend-proven `Verified -> Closed` transition is now exposed through the dedicated frontend Close action. Runtime coverage proves skip-path, permission, organization, and branch isolation; frontend coverage proves dedicated mutation use and targeted detail/list/dashboard invalidation. The core chain `Assigned -> Accepted -> InProgress -> Completed -> Verified -> Closed` is CLOSED. Phase 2 branches remain deferred.
 
 Maintenance Verify milestone: the backend-proven `Completed -> Verified` transition is now exposed through the dedicated frontend Verify action. Runtime tests cover the complete lifecycle chain, skip-path rejection, permission enforcement, and organization/branch isolation; frontend tests cover dedicated mutation use and targeted detail/list/dashboard invalidation.
