@@ -1,5 +1,7 @@
 # Current Project Status
 
+Maintenance Start milestone: the backend-proven `Accepted -> InProgress` transition is now exposed through the dedicated frontend Start action. Runtime tests cover valid transition, invalid-source rejection, permission enforcement, and organization/branch isolation; frontend tests cover dedicated mutation use and targeted detail/list/dashboard invalidation.
+
 Maintenance Accept milestone: the backend-proven `Assigned -> Accepted` transition is now exposed through the dedicated frontend Accept action. Backend tests verify valid transition, invalid source rejection, permission enforcement, and organization/branch isolation; frontend tests verify dedicated mutation usage and targeted detail/list/dashboard invalidation.
 
 Assignment verification milestone: backend Maintenance assignee lookup and assignment security now complete at runtime. Focused PHPUnit coverage passes for active same-organization/same-branch filtering, inactive/cross-branch/cross-organization rejection, permission enforcement, direct target injection rejection, and transition to `Assigned`. The PHPUnit feature class runs in-process because Windows process isolation hangs; test setup applies authenticated organization/branch context consistently.
