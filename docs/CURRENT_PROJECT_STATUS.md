@@ -1,6 +1,8 @@
 # Current Project Status
 
-Maintenance Verify milestone: the backend-proven `Completed -> Verified` transition is now exposed through the dedicated frontend Verify action. Runtime tests cover the complete lifecycle chain, skip-path rejection, permission enforcement, and organization/branch isolation; frontend tests cover dedicated mutation use and targeted detail/list/dashboard invalidation. Close remains the next Phase 1 transition.
+Maintenance Phase 1 core lifecycle milestone: the backend-proven `Verified -> Closed` transition is now exposed through the dedicated frontend Close action. Runtime coverage proves skip-path, permission, organization, and branch isolation; frontend coverage proves dedicated mutation use and targeted detail/list/dashboard invalidation. The core chain `Assigned -> Accepted -> InProgress -> Completed -> Verified -> Closed` is CLOSED. Phase 2 branches remain deferred.
+
+Maintenance Verify milestone: the backend-proven `Completed -> Verified` transition is now exposed through the dedicated frontend Verify action. Runtime tests cover the complete lifecycle chain, skip-path rejection, permission enforcement, and organization/branch isolation; frontend tests cover dedicated mutation use and targeted detail/list/dashboard invalidation.
 
 Maintenance Complete milestone: the backend-proven `InProgress -> Completed` transition is now exposed through the dedicated frontend Complete action. Runtime tests cover the full transition chain, invalid skip paths, permission enforcement, and organization/branch isolation; frontend tests cover dedicated mutation use, cost exclusion, and targeted detail/list/dashboard invalidation.
 
