@@ -10,7 +10,7 @@ The frontend is a plain Vite browser SPA. Apache serves `public/index.html` and 
 
 `frontend/.github/workflows/deploy-production.yml` builds and replaces only `public/index.html` and `public/assets/`. It creates a private remote backup under `~/deploy-backups/frontend-<stamp>/` before activation.
 
-`backend/.github/workflows/deploy-production.yml` packages Laravel with production Composer dependencies, then overlays code into the existing root. It never deletes the root, uses no `--delete`, excludes `.env`, storage runtime data, and `public/storage`, and backs up previous code outside the web root under `~/deploy-backups/backend-<stamp>/`. It does not run migrations.
+The backend folder is uploaded manually. `backend/.github/workflows/deploy-production.yml` is configuration-only: it validates the manually uploaded Laravel files over SSH, preserves `.env` and all storage, clears/rebuilds safe Laravel caches, and validates GraphQL. It does not package, overwrite, or migrate backend code.
 
 Required repository secrets are `PRODUCTION_SSH_HOST`, `PRODUCTION_SSH_PORT`, `PRODUCTION_SSH_USER`, and `PRODUCTION_SSH_PASSWORD`. A private key can replace password authentication later. Never put secret values in YAML or artifacts.
 
